@@ -9,6 +9,7 @@ Depencencies:
 * HAML
 * Sequel
 * Ultraviolet
+* Ruby >= 1.9
 
 Features:
 * Saves pastes into a database (currently hard-coded to a SQLite database)
@@ -22,3 +23,9 @@ Roadmap:
 * Make the default HAML layout not look like complete trash
 * Maybe use SASS to handle CSS templates? (might not be worth the effort)
 
+Instructions
+--
+
+1. Run `bundle install`
+2. Run `ruby kuropaste.ru`
+2. Go to `localhost:4567`
