@@ -22,12 +22,6 @@
 # IN THE SOFTWARE.
 ##
 
-require "sinatra/base"
-require "haml"
-require "sequel"
-require "uv"
-# require "grit"
-
 module KuroPaste
     Database = Sequel.sqlite("kuropaste.db")
     unless Database.table_exists?("pastes")
@@ -42,6 +36,7 @@ module KuroPaste
     class Paste < Sequel::Model; end
 
     class Application < Sinatra::Base
+
         set :public_folder, File.dirname(__FILE__) + "/content"
         set :haml, {:format => :html5}
 
@@ -68,6 +63,10 @@ module KuroPaste
                 redirect "/"
             end
         end
+
+        run!
+
     end
+
 end
 
